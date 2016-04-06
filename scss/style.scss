@@ -109,6 +109,9 @@ img {
         width: 100%;
         .cloud-wrap {
             width: 250px;
+            &:first-child {
+                left: -50p;
+            }
         }
     }
 }

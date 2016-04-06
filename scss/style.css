@@ -70,6 +70,8 @@ img {
   width: 100%; }
   .startPage .clouds .cloud-wrap {
     width: 250px; }
+    .startPage .clouds .cloud-wrap:first-child {
+      left: -50p; }
 
 .start-hero {
   margin-top: 100px;
