@@ -1,12 +1,5 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css";
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
-@font-face {
-  font-family: Proxima-nova-thin;
-  src: url("/fonts/proxima-nova-regular.ttf"); }
-@font-face {
-  font-family: Proxima-nova-regular;
-  font-weight: normal;
-  src: url("/fonts/proxima-nova-thin.ttf"); }
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +10,8 @@ body, html {
 
 body {
   overflow-x: hidden;
-  background: #fff; }
+  background: #fff;
+  font-family: 'Lato'; }
 
 a {
   color: white; }
@@ -43,35 +37,68 @@ img {
 .startPage header {
   padding: 10px 20px; }
   .startPage header .logo {
-    width: 50px;
-    fill: #fff; }
+    width: 100px;
+    fill: #fff;
+    margin-right: 30%;
+    padding-top: 10px; }
   .startPage header nav a {
-    margin-left: 3px;
+    margin-left: 5px;
     padding: 7px 10px 11px;
     text-decoration: none;
     font-family: 'Lato', sans-serif;
     transition: background .3s;
     text-transform: uppercase;
-    font-size: .8rem; }
-    .startPage header nav a:hover {
-      background: rgba(0, 0, 0, 0.04);
-      border-radius: 4px; }
+    font-size: .7rem;
+    position: relative;
+    letter-spacing: .01em; }
+    .startPage header nav a:not(:last-child) {
+      padding-top: 14px; }
+    .startPage header nav a:before {
+      content: '';
+      width: 80%;
+      margin: 0 auto;
+      height: 1px;
+      background: #fff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition: transform .4s;
+      transform: scaleX(0);
+      transform-origin: center right;
+      opacity: .8; }
+    .startPage header nav a:hover:before {
+      transform: scaleX(1);
+      transform-origin: center left; }
+    .startPage header nav a:last-child {
+      border: 2px solid #fff;
+      border-radius: 4px;
+      transition: background .4s, color .4s;
+      padding: 8px 20px 8px 20px; }
+      .startPage header nav a:last-child:before {
+        display: none; }
+    .startPage header nav a:last-child:hover {
+      background: #fff;
+      color: #5dc1af; }
 .startPage .bg {
-  height: 100vh;
+  height: 90vh;
   position: absolute;
   background: #5dc1af;
-  top: -80px;
+  top: 0;
   left: 0;
   z-index: -1;
-  width: 100%; }
+  width: 100%;
+  transform: skewY(10deg); }
 .startPage .clouds {
   position: absolute;
-  bottom: 10px;
+  bottom: -50px;
   width: 100%; }
   .startPage .clouds .cloud-wrap {
-    width: 250px; }
+    width: 450px; }
     .startPage .clouds .cloud-wrap:first-child {
-      left: -50p; }
+      margin-left: -50px; }
+    .startPage .clouds .cloud-wrap:last-child {
+      margin-right: -50px; }
 
 .start-hero {
   margin-top: 100px;
@@ -89,7 +116,28 @@ img {
     color: white;
     font-size: 1em;
     letter-spacing: .5em;
-    border: 2px solid #fff; }
+    border: 2px solid #fff;
+    cursor: pointer;
+    position: relative;
+    outline: none; }
+    .start-hero button:before {
+      content: '';
+      background: #fff;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      transform-origin: bottom left;
+      transform: scaleY(0);
+      transition: transform .3s; }
+    .start-hero button:hover {
+      color: #71baab; }
+      .start-hero button:hover span {
+        color: #6ff0d5; }
+    .start-hero button:hover:before {
+      transform: scaleY(1); }
     .start-hero button span {
       color: #b4f7e9; }
   .start-hero h1 {
@@ -100,11 +148,13 @@ img {
     color: white; }
 
 #footer {
-  overflow: hidden;
-  bottom: 0;
-  background: green;
-  width: 100%;
-  text-align: center;
-  color: white; }
+  bottom: 0; }
+  #footer .nav-center {
+    justify-content: center; }
+  #footer .column {
+    margin: 0px 50px; }
+  #footer a {
+    color: black;
+    text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */
